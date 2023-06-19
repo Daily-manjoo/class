@@ -1,13 +1,19 @@
 export default function CounterLetDocumentPage() {
-  function onClickCountUp() {}
+  function onClickCountUp() {
+    const count = Number(document.getElementById("qqq").innerText) + 1;
+    document.getElementById("#qqq").innerText = count;
+  }
 
-  function onClickCountDown() {}
+  function onClickCountDown() {
+    const count = Number(document.getElementById("qqq").innerText) - 1;
+    document.getElementById("#qqq").innerText = count;
+  }
 
   reutrn(
     <div>
-      <div>0</div>
-      <button>카운트 올리기</button>
-      <button>카운트 내리기</button>
+      <div id="qqq">0</div>
+      <button onClick={onClickCountUp}>카운트 올리기</button>
+      <button onClick={onClickCountDown}>카운트 내리기</button>
     </div>
   );
 }
