@@ -6,9 +6,14 @@ export default function RestGetPage() {
     console.log(result); //Promise
   }
 
-  async function onClickSync() {
+//   async function onClickSync() {
+//     const result = await axios.get("https://koreanjson.com/posts/1");    => 함수 중복 선언 문제
+//     console.log(result); //제대로 된 결과
+//   }
+
+    const onClickSync = async () =>  {
     const result = await axios.get("https://koreanjson.com/posts/1");
-    console.log(result); //제대로 된 결과
+    console.log(result); //제대로 된 결 과
   }
 
   return (
