@@ -14,7 +14,7 @@ const FETCH_BOARD = gql`
 export default function StaticRoutingMovedPage() {
   const { data } = useQuery(FETCH_BOARD);
 
-  console.log(data);
+  console.log(data.fetchBoard);
 
   return (
     <div>
