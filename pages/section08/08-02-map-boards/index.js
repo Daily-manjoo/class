@@ -14,11 +14,11 @@ const FETCH_BOARDS = gql`
 export default function StaticRoutingMovedPage() {
   const { data } = useQuery(FETCH_BOARDS);
 
-  console.log(data?.fetchBoard);
+  console.log(data?.fetchBoards);
 
   return (
     <div>
-      {data?.fetchBoard.map((el) => (
+      {data?.fetchBoards.map((el) => (
         <div>
           <span>
             <input type="checkbox" />
