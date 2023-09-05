@@ -1,7 +1,8 @@
 /*import "@/styles/globals.css";*/
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { AppProps } from "next/app";
 
-export default function App({ Component }) {
+export default function App({ Component }: AppProps) {
   const client = new ApolloClient({
     uri: "http://backend-example.codebootcamp.co.kr/graphql",
     cache: new InMemoryCache(), //컴퓨터 메모리에다 백엔드에서 받아온 데이터 임시 저장해놓기 => 나중에 더 자세히 알아보기!
