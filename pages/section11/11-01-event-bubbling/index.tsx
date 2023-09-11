@@ -1,4 +1,4 @@
-import { MouseEvent } from "react";
+import type { MouseEvent } from "react";
 import { useQuery, gql } from "@apollo/client";
 
 const FETCH_BOARDS = gql`
@@ -12,7 +12,7 @@ const FETCH_BOARDS = gql`
   }
 `;
 
-export default function StaticRoutingMovedPage() {
+export default function StaticRoutingMovedPage():JSX.Element {
   const { data } = useQuery(FETCH_BOARDS);
 
   console.log(data?.fetchBoards);
@@ -24,7 +24,7 @@ export default function StaticRoutingMovedPage() {
   return (
     <div>
       {data?.fetchBoards.map((el: any) => (
-        <div id={el.writer} onClick={onClickAlert}>
+        <div key={el.id} id={el.writer} onClick={onClickAlert}>
           <span>
             <input type="checkbox" />
           </span>
@@ -33,6 +33,6 @@ export default function StaticRoutingMovedPage() {
           <span style={{ margin: "10px" }}>{el.writer}</span>
         </div>
       ))}
-    </div> //data가 있으면 그리고 없으면 그리지X *옵셔널체이닝
+    </div> // data가 있으면 그리고 없으면 그리지X *옵셔널체이닝
   );
 }
