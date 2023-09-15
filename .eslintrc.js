@@ -4,7 +4,18 @@ module.exports = {
     es2021: true,
   },
   extends: ["plugin:react/recommended", "standard-with-typescript", "prettier"],
-  overrides: [],
+  overrides: [
+    {
+      parser: "@typescript-eslint/parser",
+    },
+    {
+      files: ["**/*.js?(x)"],
+      parserOptions: {
+        sourceType: "module",
+        ecmaVersion: 2015,
+      },
+    },
+  ],
   parserOptions: {
     project: "**/tsconfig.json",
     ecmaVersion: "latest",
@@ -14,5 +25,4 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
   },
-  
 };

@@ -11,7 +11,7 @@ export default function CounterLetDocumentPage() {
     setCount(count - 1);
   }
 
-  reutrn(
+  return (
     <div>
       <div id="qqq">{count}</div>
       <button onClick={onClickCountUp}>카운트 올리기</button>
