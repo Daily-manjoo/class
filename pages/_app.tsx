@@ -1,6 +1,7 @@
 /* import "@/styles/globals.css"; */
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
+import Layout from "../src/component/commons/layout";
 
 export default function App({ Component }: AppProps): JSX.Element {
   const client = new ApolloClient({
@@ -10,11 +11,19 @@ export default function App({ Component }: AppProps): JSX.Element {
 
   return (
     <div>
-      <div>===================여기는 _app.js 컴포넌트 시작 부분입니다. ==============================</div>
+      <div>
+        ===================여기는 _app.js 컴포넌트 시작
+        부분입니다.==============================
+      </div>
       <ApolloProvider client={client}>
-        <Component />
+        <Layout>
+          <Component />
+        </Layout>
       </ApolloProvider>
-      <div>===================여기는 _app.js 컴포넌트 마지막 부분입니다. ==============================</div>
+      <div>
+        ===================여기는 _app.js 컴포넌트 마지막 부분입니다.
+        ==============================
+      </div>
     </div>
   );
 }
