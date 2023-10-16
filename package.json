@@ -47,5 +47,9 @@
     "husky": "^8.0.3",
     "prettier": "3.0.3",
     "typescript": "*"
+  },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
   }
 }
